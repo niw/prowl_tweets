@@ -20,16 +20,16 @@ Open prowl_tweets.yml then put next keys for using Twitter and Prowl APIs.
 
     --- 
     :twitter: 
-      :ctoken: (Consumer key for Twitter API)
-      :csecret: (Consumer secret for Twitter API)
+      :ctoken: xxxxxxxxxxxxxxxxxxxxxx # Consumer key for Twitter API
+      :csecret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx # Consumer secret for Twitter API
     :prowl: 
-      :apikey: (Prowl API key)
+      :apikey: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx # Prowl API key
     :max_prowl: 5
     :prowl_per_tweet: false
 
  *  ctoken and csecret
 
-    You can get them from [Twitter OAuth page](http://twitter.com/oauth_clients)(Requre login.)
+    You can get them from [Twitter OAuth page](http://twitter.com/oauth_clients)(Require login.)
 	When you are registering the OAuth client, you have to select "Application Type" as "Client".
 	"Default Access type" is enough as "Read-only".
 
