@@ -2,6 +2,7 @@ Prowl client for Twitter
 ========================
 
 This is a tiny ruby script which fetch reply(mention) tweets from Twitter then push them to [Prowl](http://prowl.weks.net/).
+This script must be a good example code for using Twitter, OAuth and Prowl APIs via Ruby script.
 
 Install
 -------
@@ -20,7 +21,7 @@ Open prowl_tweets.yml then put next keys for using Twitter and Prowl APIs.
     --- 
     :twitter: 
       :ctoken: (Consumer key for Twitter API)
-      :csecret: (Consumer secrent for Twitter API)
+      :csecret: (Consumer secret for Twitter API)
     :prowl: 
       :apikey: (Prowl API key)
     :max_prowl: 5
@@ -29,7 +30,7 @@ Open prowl_tweets.yml then put next keys for using Twitter and Prowl APIs.
  *  ctoken and csecret
 
     You can get them from [Twitter OAuth page](http://twitter.com/oauth_clients)(Requre login.)
-	When you are registering the client application, you have to select "Application Type" as "Client".
+	When you are registering the OAuth client, you have to select "Application Type" as "Client".
 	"Default Access type" is enough as "Read-only".
 
  *  apikey
