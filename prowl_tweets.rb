@@ -120,6 +120,7 @@ def main
       end.join("\n")
       add_prowl(:event => "#{tweets.length} tweets", :description => description)
     end
+    write_configure($default_configure)
   end
 end
 
