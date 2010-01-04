@@ -102,7 +102,7 @@ def main
 
   # Get mention tweets
   twitter = authorized_twitter
-  tweets = mentions(twitter)
+  tweets = mentions(twitter).reverse
   if tweets.length > 0
     # Push notification(s) to Prowl
     if $configure[:prowl_per_tweet]
@@ -112,7 +112,7 @@ def main
         add_prowl(:event => tweet.user.screen_name, :description => tweet.text + " tweetie://status?id=#{tweet.id}")
       end
       unless tweets.empty?
-        add_prowl(:event => "And more #{tweets.length} remains", :description => "tweetie://")
+        add_prowl(:event => "Mentions", :description => "#{tweets.length} or more remains tweetie://")
       end
     else
       description = tweets.map do |tweet|
@@ -120,6 +120,7 @@ def main
       end.join("\n")
       add_prowl(:event => "#{tweets.length} tweets", :description => description)
     end
+    write_configure($default_configure)
   end
 end
 
