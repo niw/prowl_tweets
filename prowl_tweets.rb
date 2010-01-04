@@ -109,14 +109,14 @@ def main
       ($configure[:max_prowl] == 0 ? tweet.length : $configure[:max_prowl]).times do
         tweet = tweets.shift
         break unless tweet
-        add_prowl(:event => tweet.user.screen_name, :description => tweet.text + " http://twitter.com/#{tweet.user.screen_name}/status/#{tweet.id}")
+        add_prowl(:event => tweet.user.screen_name, :description => tweet.text + " tweetie://status?id=#{tweet.id}")
       end
       unless tweets.empty?
-        add_prowl(:event => "And more #{tweets.length} remains", :description => "http://twitter.com/")
+        add_prowl(:event => "And more #{tweets.length} remains", :description => "tweetie://")
       end
     else
       description = tweets.map do |tweet|
-        "#{tweet.user.screen_name}: #{tweet.text} - http://twitter.com/#{tweet.user.screen_name}/status/#{tweet.id}"
+        "#{tweet.user.screen_name}: #{tweet.text} - tweetie://status?id=#{tweet.id}"
       end.join("\n")
       add_prowl(:event => "#{tweets.length} tweets", :description => description)
     end
